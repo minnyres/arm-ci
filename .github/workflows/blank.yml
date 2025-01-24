@@ -24,6 +24,7 @@ jobs:
           wget https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
           7z x  aria2_1.37.0_arm64.zip
           ls
+          sudo systemctl restart  binfmt-support.service
           ./aria2c.exe https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
           
           
