@@ -6,7 +6,7 @@ on:
 jobs:
   build-windows-arm64:
     name: Build
-    runs-on: buntu-24.04-arm
+    runs-on: ubuntu-24.04-arm
     env:
       llvm_path: "${{ github.workspace }}/llvm-mingw"
     
