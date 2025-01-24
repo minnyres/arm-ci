@@ -16,14 +16,15 @@ jobs:
 
       - name: Install tools
         run: |
-          sudo apt update
-          sudo apt search wine
-          sudo apt install \
-            build-essential p7zip cmake ninja-build pkg-config autoconf automake autoconf-archive make texlive-binaries texinfo bison flex m4 libtool wine wine64 wine-binfmt binfmt-support 
           #uname -a 
           #wget https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
           #7z x  aria2_1.37.0_arm64.zip
           #ls
+          sudo mkdir -pm755 /etc/apt/keyrings
+          wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
+          sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
+          sudo apt update
+          sudo apt install --install-recommends winehq-stable
           sudo systemctl restart  binfmt-support.service
           wineboot
           #./aria2c.exe https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
