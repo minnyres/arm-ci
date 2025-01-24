@@ -20,11 +20,12 @@ jobs:
           sudo apt search wine
           sudo apt install \
             build-essential p7zip cmake ninja-build pkg-config autoconf automake autoconf-archive make texlive-binaries texinfo bison flex m4 libtool wine wine64 wine-binfmt binfmt-support 
-          uname -a 
-          wget https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
-          7z x  aria2_1.37.0_arm64.zip
-          ls
+          #uname -a 
+          #wget https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
+          #7z x  aria2_1.37.0_arm64.zip
+          #ls
           sudo systemctl restart  binfmt-support.service
-          ./aria2c.exe https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
+          wineboot
+          #./aria2c.exe https://github.com/minnyres/aria2-windows-arm64/releases/download/v1.37.0/aria2_1.37.0_arm64.zip
           
           
